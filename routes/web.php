@@ -15,7 +15,9 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('article/index', 'ArticleController@index');
-Route::get('article/create', 'ArticleController@create');
-Route::get('article/store', 'ArticleController@store');
+Route::prefix('article')->group(function () {
+    Route::get('index', 'ArticleController@index');
+    Route::get('create', 'ArticleController@create');
+    Route::get('store', 'ArticleController@store');
+});
 
