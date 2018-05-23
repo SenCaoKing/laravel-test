@@ -55,3 +55,9 @@ Route::prefix('database')->group(function () {
     Route::get('test', 'DatabaseController@test');
 });
 
+Route::prefix('model')->group(function () {
+    Route::get('index', 'ModelController@index');
+    Route::get('get', 'ModelController@get');
+    Route::get('store', 'ModelController@store');
+});
+
