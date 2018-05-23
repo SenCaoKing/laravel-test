@@ -21,3 +21,11 @@ Route::prefix('article')->group(function () {
     Route::get('store', 'ArticleController@store');
 });
 
+Route::prefix('admin')->namespace('Admin')->group(function () {
+    Route::prefix('article')->group(function () {
+        Route::get('index', 'ArticleController@index');
+        Route::get('create', 'ArticleController@create');
+        Route::post('store', 'ArticleController@store');
+    });
+});
+
