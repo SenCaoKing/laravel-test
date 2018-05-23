@@ -31,6 +31,7 @@ class ModelController extends Controller
      */
     public function get(Article $articleModel)
     {
+        // ① 直接查询
         $data = Article::select('category_id', 'title', 'content')
             ->where('title', '<>', '文章1')
             ->whereIn('id', [1, 2, 3])
@@ -39,6 +40,7 @@ class ModelController extends Controller
             ->get();
         dump($data->toArray());
 
+        // ② 实例化模型类
         $data = $articleModel->articleList(); // 复用模型方法
         dump($data->toArray());
     }
@@ -55,5 +57,32 @@ class ModelController extends Controller
         ];
         $result = $articleModel->create($data);
         dump($result->id);
+        $id = $articleModel->create($data)->id;
+        dump($id);
+    }
+
+    /**
+     * 修改数据
+     */
+    public function update(Article $articleModel)
+    {
+        $id = 6;
+        $data = [
+          'category_id' => 2,
+          'title'      => '文章6',
+           'content'   => '内容666',
+        ];
+        $result = $articleModel->where('id', $id)->update($data);
+        dump($result);
+    }
+
+    /**
+     * 删除数据
+     */
+    public function delete(Article $articleModel)
+    {
+        $id = 6;
+        $result = $articleModel->where('id', $id)->delete();
+        dump($result);
     }
 }

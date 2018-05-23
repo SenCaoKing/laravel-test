@@ -3,9 +3,13 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Article extends Model
 {
+    use SoftDeletes;
+
+    // $fillable 和 $guarded 只能定义一个
     /**
      * 允许赋值的字段
      *
@@ -18,8 +22,13 @@ class Article extends Model
      *
      * @var array
      */
-    protected $guarded = []; // $fillable 和 $guarded 只能定义一个
+    protected $guarded = []; // 空数组 表示任何字段都可赋值
 
+    /**
+     * 获取文章列表
+     *
+     * @return mixed
+     */
     public function articleList()
     {
         $data = $this->select('category_id', 'title', 'content')

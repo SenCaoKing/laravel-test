@@ -59,5 +59,7 @@ Route::prefix('model')->group(function () {
     Route::get('index', 'ModelController@index');
     Route::get('get', 'ModelController@get');
     Route::get('store', 'ModelController@store');
+    Route::get('update', 'ModelController@update');
+    Route::get('delete', 'ModelController@delete');
 });
 
