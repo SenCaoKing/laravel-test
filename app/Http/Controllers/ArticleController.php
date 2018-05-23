@@ -54,9 +54,9 @@ class ArticleController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit($name, $id)
     {
-        return '地址栏传的参数是：'.$id;
+        return 'id是：' . $id. '<br>name是：' .$name;
     }
 
     /**
