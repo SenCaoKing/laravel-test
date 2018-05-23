@@ -52,17 +52,6 @@ class ViewController extends Controller
     }
 
     /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-        //
-    }
-
-    /**
      * 编辑文章页面
      *
      * @param  int  $id
@@ -92,13 +81,43 @@ class ViewController extends Controller
     }
 
     /**
-     * Remove the specified resource from storage.
+     * 删除文章
      *
      * @param  int  $id
-     * @return \Illuminate\Http\Response
+     *
+     * @return \Illuminate\Http\RedirectResponse
      */
     public function destroy($id)
     {
-        //
+        Article::destroy($id);
+        return redirect()->back();
     }
+
+    /**
+     * 恢复文章
+     *
+     * @param  int  $id
+     *
+     * @return \Illuminate\Http\RedirectResponse
+     */
+    public function restore($id)
+    {
+        Article::where('id', $id)->restore();
+        return redirect()->back();
+    }
+
+    /**
+     * 彻底删除文章
+     *
+     * @param  int  $id
+     *
+     * @return \Illuminate\Http\RedirectResponse
+     */
+    public function forceDelete($id)
+    {
+        Article::where('id', $id)->forceDelete();
+        return redirect()->back();
+    }
+
+
 }

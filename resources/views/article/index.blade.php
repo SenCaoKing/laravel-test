@@ -17,10 +17,10 @@
                 <td>
                     <a href="{{ url('view/edit', $v->id) }}">编辑</a> |
                     @if($v->trashed())
-                        <a href="{{ url('view/restore', $v-id) }}">恢复</a> |
+                        <a href="{{ url('view/restore', $v->id) }}">恢复</a> |
                         <a href="{{ url('view/forceDelete', $v->id) }}">彻底删除</a>
                     @else
-                        <a href="{{ url('view/destory', $v->id) }}">删除</a>
+                        <a href="{{ url('view/destroy', $v->id) }}">删除</a>
                     @endif
                 </td>
             </tr>

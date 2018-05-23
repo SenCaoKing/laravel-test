@@ -69,5 +69,8 @@ Route::prefix('view')->group(function () {
     Route::post('store', 'ViewController@store');
     Route::get('edit/{id}', 'ViewController@edit');
     Route::post('update/{id}', 'ViewController@update');
+    Route::get('destroy/{id}', 'ViewController@destroy');
+    Route::get('restore/{id}', 'ViewController@restore');
+    Route::get('forceDelete/{id}', 'ViewController@forceDelete');
 });
 
