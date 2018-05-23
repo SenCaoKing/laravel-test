@@ -63,3 +63,7 @@ Route::prefix('model')->group(function () {
     Route::get('delete', 'ModelController@delete');
 });
 
+Route::prefix('view')->group(function () {
+    Route::get('index', 'ViewController@index');
+});
+
