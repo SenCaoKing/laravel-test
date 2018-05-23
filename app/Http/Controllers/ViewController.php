@@ -40,14 +40,15 @@ class ViewController extends Controller
     }
 
     /**
-     * Store a newly created resource in storage.
+     * 新增文章
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Routing\Redirector
      */
     public function store(Request $request)
     {
-        //
+        $data = $request->except('_token');
+        Article::create($data);
+        return redirect('view/index');
     }
 
     /**
@@ -62,10 +63,11 @@ class ViewController extends Controller
     }
 
     /**
-     * Show the form for editing the specified resource.
+     * 编辑文章页面
      *
      * @param  int  $id
-     * @return \Illuminate\Http\Response
+     *
+     * @return \Illuminate\View\View
      */
     public function edit($id)
     {

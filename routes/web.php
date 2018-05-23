@@ -66,5 +66,7 @@ Route::prefix('model')->group(function () {
 Route::prefix('view')->group(function () {
     Route::get('index', 'ViewController@index');
     Route::get('create', 'ViewController@create');
+    Route::post('store', 'ViewController@store');
+    Route::get('edit/{id}', 'ViewController@edit');
 });
 

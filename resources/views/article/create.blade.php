@@ -7,7 +7,7 @@
         <title>{{ $title }} --- laravel练习 By Sen</title>
     </head>
     <body>
-    <form action="{{ url('view/create') }}" method="post">
+    <form action="{{ url('view/store') }}" method="post">
         {{ csrf_field() }}
         <input type="text" name="title" value="" /><br>
         <input type="text" name="content" value="" /><br>
