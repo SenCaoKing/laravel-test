@@ -7,6 +7,9 @@ use DB;
 
 class DatabaseController extends Controller
 {
+    /**
+     * 插入数据
+     */
     public function insert()
     {
         /**
@@ -30,8 +33,18 @@ class DatabaseController extends Controller
                 'content'      => '内容3',
             ],
         ]);
-
-
-
     }
+
+    /**
+     * 查询数据
+     */
+    public function get()
+    {
+        $data = DB::table('articles')->get();
+        dump($data);
+    }
+
+
+
+
 }

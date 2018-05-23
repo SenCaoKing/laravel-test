@@ -51,5 +51,6 @@ Route::prefix('home')->namespace('Home')->group(function () {
 
 Route::prefix('database')->group(function () {
     Route::get('insert', 'DatabaseController@insert');
+    Route::get('get', 'DatabaseController@get');
 });
 
