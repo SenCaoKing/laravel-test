@@ -67,6 +67,10 @@ class ArticleController extends Controller
 //        return $str; // 访问URL http://www.lar.test/article/edit/1/%E6%9B%B9%E5%8A%9F%E5%AE%89?music=%E6%9B%BE%E7%BB%8F%E7%9A%84%E4%BD%A0&book=%E5%B9%B3%E5%87%A1%E4%B8%96%E7%95%8C
 
         dump($request->all());
+
+        dump($request->only( 'book'));
+
+        dump($request->except('book'));
     }
 
     /**
