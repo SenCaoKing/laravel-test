@@ -54,7 +54,7 @@ class ArticleController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($name, $id)
+    public function edit($id, $name)
     {
         return 'id是：' . $id. '<br>name是：' .$name;
     }
