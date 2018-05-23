@@ -124,6 +124,47 @@ class DatabaseController extends Controller
         dump($data);
     }
 
+    /**
+     * 测试集合(collection)和数组(array)
+     */
+    public function test()
+    {
+        $array = [
+            '', '酷', 'Sen', 0, 'Cao', false, 'King', null, '很', '帅'
+        ];
+        dump($array);
+
+        $collect = collect($array);
+
+        dump($collect);
+        // 简单循环输出
+        // foreach ($collect as $k => $v) {
+        //    dump($v);
+        // }
+
+        // 过滤、拼接操作
+        /**
+         * ① 数组方式
+         * unset() 释放/销毁 给定的变量
+         * array_filter() 过滤为假的值
+         * implode() 将一维数组转化为字符串
+         */
+        unset($array[1]);
+        dump(implode('-', array_filter($array)));
+
+        /**
+         * ② 集合方式
+         * forgrt() 删除
+         * filter() 过滤为假的值
+         * implode() 用 - 连接
+         */
+        dump($collect->forget(1)->filter()->implode('-'));
+
+        $data = DB::table('articles')->where('id', '>', 1)->get()->pluck('title')->implode('-');
+        dump($data);
+
+    }
+
 
 
 
