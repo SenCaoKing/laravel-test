@@ -65,5 +65,6 @@ Route::prefix('model')->group(function () {
 
 Route::prefix('view')->group(function () {
     Route::get('index', 'ViewController@index');
+    Route::get('create', 'ViewController@create');
 });
 

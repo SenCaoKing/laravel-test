@@ -10,7 +10,7 @@ class ViewController extends Controller
     /**
      * 文章列表
      *
-     * @return \Illuminate\View\view
+     * @return \Illuminate\View\View
      */
     public function index()
     {
@@ -23,18 +23,20 @@ class ViewController extends Controller
             'article' => $article,
         ];
         // $assign = compact('title','article'); // compact()函数简化 $assign(效果同上)
-         dump($assign);
+        // dump($assign);
         return view('article.index', $assign);
     }
 
     /**
-     * Show the form for creating a new resource.
+     * 新增文章页面
      *
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\View\View
      */
     public function create()
     {
-        //
+        $title = '新增文章';
+        $assign = compact('title');
+        return view('article.create', $assign);
     }
 
     /**
