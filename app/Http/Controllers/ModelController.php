@@ -84,5 +84,19 @@ class ModelController extends Controller
         $id = 6;
         $result = $articleModel->where('id', $id)->delete();
         dump($result);
+
+        // withTrashed() 查询带有软删除的数据
+        $data = Article::withTrashed()->get();
+        dump($data->toArray());
+
+        // 只查软删除的数据
+        $data = Article::onlyTrashed()->get();
+        dump($data->toArray());
+
+        // restore() 恢复删除
+        $articleModel->where('id', $id)->restore();
+
+        // forceDelete() 彻底删除
+        $articleModel->where('id', $id)->forceDelete();
     }
 }
