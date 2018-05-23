@@ -73,7 +73,6 @@ class ViewController extends Controller
     {
         $title = '编辑文章';
         $article = Article::find($id);
-        dump($article);
         $assign = compact('article', 'title');
         return view('article.edit', $assign);
     }
