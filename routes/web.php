@@ -19,6 +19,7 @@ Route::prefix('article')->group(function () {
     Route::get('index', 'ArticleController@index');
     Route::get('create', 'ArticleController@create');
     Route::get('store', 'ArticleController@store');
+    Route::get('edit/{id}','ArticleController@edit');
 });
 
 Route::prefix('admin')->namespace('Admin')->group(function () {

@@ -56,7 +56,7 @@ class ArticleController extends Controller
      */
     public function edit($id)
     {
-        //
+        return '地址栏传的参数是：'.$id;
     }
 
     /**
