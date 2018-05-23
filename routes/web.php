@@ -19,7 +19,7 @@ Route::prefix('article')->group(function () {
     Route::get('index', 'ArticleController@index');
     Route::get('create', 'ArticleController@create');
     Route::get('store', 'ArticleController@store');
-    Route::get('edit/{id}/{name}','ArticleController@edit');
+    Route::get('edit/{id}/{name}','ArticleController@edit')->where('id', '[0-9]+');
 });
 
 Route::prefix('admin')->namespace('Admin')->group(function () {
