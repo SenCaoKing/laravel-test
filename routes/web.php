@@ -27,5 +27,24 @@ Route::prefix('admin')->namespace('Admin')->group(function () {
         Route::get('create', 'ArticleController@create');
         Route::post('store', 'ArticleController@store');
     });
+
+    Route::prefix('tag')->group(function () {
+        Route::get('index', 'TagController@index');
+        Route::get('create', 'TagController@create');
+        Route::post('store', 'TagController@store');
+    });
+});
+
+Route::prefix('home')->namespace('Home')->group(function () {
+    Route::prefix('article')->group(function () {
+        Route::get('index', 'ArticleController@index');
+        Route::get('create', 'ArticleController@create');
+        Route::post('store', 'ArticleController@store');
+    });
+    Route::prefix('tag')->group(function () {
+        Route::get('index', 'TagController@index');
+        Route::get('create', 'TagController@create');
+        Route::post('store', 'TagController@store');
+    });
 });
 
