@@ -68,5 +68,6 @@ Route::prefix('view')->group(function () {
     Route::get('create', 'ViewController@create');
     Route::post('store', 'ViewController@store');
     Route::get('edit/{id}', 'ViewController@edit');
+    Route::post('update/{id}', 'ViewController@update');
 });
 

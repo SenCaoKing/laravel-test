@@ -71,19 +71,25 @@ class ViewController extends Controller
      */
     public function edit($id)
     {
-        //
+        $title = '编辑文章';
+        $article = Article::find($id);
+        dump($article);
+        $assign = compact('article', 'title');
+        return view('article.edit', $assign);
     }
 
     /**
-     * Update the specified resource in storage.
+     * 编辑文章
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
+     * @param  Request  $request
+     * @param  int      $id
+     * @return \Illuminate\Routing\Redirector
      */
     public function update(Request $request, $id)
     {
-        //
+        $data = $request->except('_token');
+        Article::where('id', $id)->update($data);
+        return redirect('view/index');
     }
 
     /**
