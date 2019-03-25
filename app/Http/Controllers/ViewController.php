@@ -22,8 +22,10 @@ class ViewController extends Controller
             'title'   => $title,
             'article' => $article,
         ];
-        // $assign = compact('title','article'); // compact()函数简化 $assign(效果同上)
+
+        $assign = compact('title','article'); // compact()函数简化 $assign(效果同上)
         // dump($assign);
+        // debug($assign);
         return view('article.index', $assign);
     }
 
@@ -42,6 +44,8 @@ class ViewController extends Controller
     /**
      * 新增文章
      *
+     * @param Request $request
+     *
      * @return \Illuminate\Routing\Redirector
      */
     public function store(Request $request)
@@ -54,7 +58,7 @@ class ViewController extends Controller
     /**
      * 编辑文章页面
      *
-     * @param  int  $id
+     * @param $id
      *
      * @return \Illuminate\View\View
      */
@@ -70,7 +74,8 @@ class ViewController extends Controller
      * 编辑文章
      *
      * @param  Request  $request
-     * @param  int      $id
+     * @param           $id
+     *
      * @return \Illuminate\Routing\Redirector
      */
     public function update(Request $request, $id)
@@ -83,7 +88,7 @@ class ViewController extends Controller
     /**
      * 删除文章
      *
-     * @param  int  $id
+     * @param $id
      *
      * @return \Illuminate\Http\RedirectResponse
      */
@@ -96,7 +101,7 @@ class ViewController extends Controller
     /**
      * 恢复文章
      *
-     * @param  int  $id
+     * @param $id
      *
      * @return \Illuminate\Http\RedirectResponse
      */
@@ -109,7 +114,7 @@ class ViewController extends Controller
     /**
      * 彻底删除文章
      *
-     * @param  int  $id
+     * @param $id
      *
      * @return \Illuminate\Http\RedirectResponse
      */

@@ -74,3 +74,7 @@ Route::prefix('view')->group(function () {
     Route::get('forceDelete/{id}', 'ViewController@forceDelete');
 });
 
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');

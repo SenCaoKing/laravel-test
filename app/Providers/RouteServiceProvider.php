@@ -4,8 +4,6 @@ namespace App\Providers;
 
 use Illuminate\Support\Facades\Route;
 use Illuminate\Foundation\Support\Providers\RouteServiceProvider as ServiceProvider;
-use Illuminate\Support\Facades\Schema;
-
 class RouteServiceProvider extends ServiceProvider
 {
     /**
@@ -27,7 +25,6 @@ class RouteServiceProvider extends ServiceProvider
         // 定义全局约束
         Route::pattern('id', '[0-9]+');
 
-        Schema::defaultStringLength(191);
         parent::boot();
     }
 
