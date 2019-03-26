@@ -74,7 +74,15 @@ Route::prefix('view')->group(function () {
     Route::get('forceDelete/{id}', 'ViewController@forceDelete');
 });
 
-
+// 用户认证
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+// 表单验证
+Route::prefix('validation')->group(function () {
+    Route::get('create', 'ValidationController@create');
+    Route::post('store', 'ValidationController@store');
+    Route::get('edit', 'ValidationController@edit');
+    Route::post('update', 'ValidationController@update');
+});

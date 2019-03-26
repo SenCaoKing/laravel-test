@@ -14,7 +14,7 @@ return [
     */
 
     'defaults' => [
-        'guard' => 'web',
+        'guard' => 'admin',
         'passwords' => 'users',
     ],
 
@@ -41,10 +41,12 @@ return [
             'provider' => 'users',
         ],
 
+        /*
         'oauth' => [
             'driver' => 'session',
             'provider' => 'oauth',
         ],
+        */
     ],
 
     /*
@@ -70,10 +72,12 @@ return [
             'model' => App\Models\User::class,
         ],
 
+        /*
         'oauth' => [
             'driver' => 'eloquent',
             'model' => App\Models\OauthUser::class,
         ]
+        */
 
         // 'users' => [
         //     'driver' => 'database',
