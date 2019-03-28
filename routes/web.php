@@ -86,3 +86,6 @@ Route::prefix('validation')->group(function () {
     Route::get('edit', 'ValidationController@edit');
     Route::post('update', 'ValidationController@update');
 });
+
+// 前端学习路由
+Route::view('mix/view', 'mix.view');
